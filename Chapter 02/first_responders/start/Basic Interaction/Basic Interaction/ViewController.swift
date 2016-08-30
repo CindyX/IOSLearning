@@ -14,7 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBAction func buttonWasClicked(sender: AnyObject) {
         label.text = "Hi \(textField.text!)!"
+        textField.resignFirstResponder()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+//        textField.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
