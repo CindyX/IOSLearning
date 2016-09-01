@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07t-jc-F0x">
+                                <rect key="frame" x="0.0" y="45" width="600" height="555"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n63-l4-x2z">
+                                <rect key="frame" x="517" y="18" width="83" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.78822208800000004" blue="0.83224839449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="buttonGoForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAs-XE-k3p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pru-u1-YlE">
+                                <rect key="frame" x="0.0" y="16.5" width="90" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.78822208802274241" blue="0.83224839450456778" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="buttonGoBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9iL-Xk-EDg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pru-u1-YlE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KZS-DR-TXq"/>
+                            <constraint firstItem="n63-l4-x2z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="e3f-jp-FoE"/>
+                            <constraint firstItem="07t-jc-F0x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="ffS-Np-WVS"/>
+                            <constraint firstAttribute="trailing" secondItem="07t-jc-F0x" secondAttribute="trailing" id="gAJ-s1-iat"/>
+                            <constraint firstItem="07t-jc-F0x" firstAttribute="top" secondItem="pru-u1-YlE" secondAttribute="bottom" id="isT-ay-xdl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n63-l4-x2z" secondAttribute="trailing" id="oQf-Jc-mVc"/>
+                            <constraint firstItem="07t-jc-F0x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qq7-U9-2Z5"/>
+                            <constraint firstItem="07t-jc-F0x" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wi3-vb-2IL"/>
+                            <constraint firstItem="pru-u1-YlE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="y7M-Ps-TjD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="07t-jc-F0x" id="gae-we-sax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="380" y="307"/>
         </scene>
     </scenes>
 </document>
