@@ -97,6 +97,11 @@
 					634BB4231C7522EA00F67EE7 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 645DPB2K5W;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -285,6 +290,7 @@
 				634BB4381C7522EA00F67EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
