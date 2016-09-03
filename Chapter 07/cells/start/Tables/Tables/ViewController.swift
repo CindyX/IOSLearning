@@ -27,9 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         if indexPath.section == 0 {
             cell.textLabel?.text = data[indexPath.row]
+            cell.detailTextLabel?.text = "Subtitle 1"
         }
         else {
             cell.textLabel?.text = data1[indexPath.row]
+            cell.detailTextLabel?.text = "Subtitle 2"
         }
         
         return cell

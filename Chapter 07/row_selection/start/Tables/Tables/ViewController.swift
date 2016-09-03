@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let data:[String] = ["Item 1","Item 2","Item 3","Item 4","Item 5","Item 6"]
     let data1:[String] = ["Item a","Item b","Item c"]
@@ -51,6 +51,10 @@ class ViewController: UIViewController, UITableViewDataSource {
             return "Data 0"
         }
         return "Data 1"
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Selected section: \(indexPath.section); row: \(indexPath.row)")
     }
 }
 

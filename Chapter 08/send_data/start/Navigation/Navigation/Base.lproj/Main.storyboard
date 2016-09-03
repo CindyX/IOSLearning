@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,21 +27,21 @@
                                 <rect key="frame" x="20" y="113" width="120" height="30"/>
                                 <state key="normal" title="Option B"/>
                                 <connections>
-                                    <segue destination="I8H-wp-r0B" kind="show" id="88U-rw-zsh"/>
+                                    <segue destination="I8H-wp-r0B" kind="show" identifier="optionB" id="88U-rw-zsh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-lv-rmA">
                                 <rect key="frame" x="20" y="151" width="120" height="30"/>
                                 <state key="normal" title="Option C"/>
                                 <connections>
-                                    <segue destination="I8H-wp-r0B" kind="show" id="xIH-uc-DQs"/>
+                                    <segue destination="I8H-wp-r0B" kind="show" identifier="optionC" id="xIH-uc-DQs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npw-Rj-lJ5">
                                 <rect key="frame" x="20" y="75" width="120" height="30"/>
                                 <state key="normal" title="Option A"/>
                                 <connections>
-                                    <segue destination="I8H-wp-r0B" kind="show" id="tfQ-xF-h1D"/>
+                                    <segue destination="I8H-wp-r0B" kind="show" identifier="optionA" id="tfQ-xF-h1D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="333" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="B98-fH-zwq">
             <objects>
-                <viewController id="I8H-wp-r0B" sceneMemberID="viewController">
+                <viewController id="I8H-wp-r0B" customClass="DetailViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WqH-sR-Nqf"/>
                         <viewControllerLayoutGuide type="bottom" id="gFz-fM-NTg"/>
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-au-W03">
-                                <rect key="frame" x="18" y="28" width="53" height="21"/>
+                                <rect key="frame" x="18" y="28" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -80,6 +80,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="labelShowOption" destination="twJ-au-W03" id="SWg-7e-kCm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAp-c9-oBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +90,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xIH-uc-DQs"/>
+        <segue reference="tfQ-xF-h1D"/>
     </inferredMetricsTieBreakers>
 </document>

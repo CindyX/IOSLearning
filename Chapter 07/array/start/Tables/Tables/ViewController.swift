@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
 
+    var data:[String] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        for ind in 1...6 {
+            data.append("Item \(ind)")
+        }
+        print(data)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,12 +28,12 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Cell!!!"
+        cell.textLabel?.text = data[indexPath.row]
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return data.count
     }
 }
 

@@ -45,5 +45,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Data by Number"
+        }
+        return "Data by Alphabet"
+    }
 }
 

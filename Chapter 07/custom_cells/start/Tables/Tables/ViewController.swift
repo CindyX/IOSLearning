@@ -24,12 +24,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomTableCellTableViewCell
         if indexPath.section == 0 {
-            cell.textLabel?.text = data[indexPath.row]
+            cell.label.text = data[indexPath.row]
         }
         else {
-            cell.textLabel?.text = data1[indexPath.row]
+            cell.label.text = data1[indexPath.row]
         }
         
         return cell

@@ -23,7 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+//        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         cell.textLabel?.text = data[indexPath.row]
         return cell
     }

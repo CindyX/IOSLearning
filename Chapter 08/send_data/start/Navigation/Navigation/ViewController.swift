@@ -19,6 +19,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detail:DetailViewController = segue.destinationViewController as! DetailViewController
+        if segue.identifier == "optionA" {
+            detail.text = "Option A"
+        }
+        else if segue.identifier == "optionB" {
+            detail.text = "Option B"
+        }
+        else if segue.identifier == "optionC" {
+            detail.text = "Option C"
+        }
+    }
 
 
 }

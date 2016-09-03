@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
 
     let data:[String] = ["Item 1","Item 2","Item 3","Item 4","Item 5","Item 6"]
+    let data1:[String] = ["Item a","Item b","Item c"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,26 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cellNum", forIndexPath: indexPath)
+            cell.textLabel?.text = data[indexPath.row]
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cellAlph", forIndexPath: indexPath)
+            cell.textLabel?.text = data1[indexPath.row]
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if section == 0 {
+            return data.count
+        }
+        return data1.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2;
     }
 }
 
